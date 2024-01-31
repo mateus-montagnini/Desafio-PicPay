@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.math.BigDecimal;
+
 // 'g G h H ""'
 @Entity(name = "users")
 @Table(name = "users")
@@ -26,4 +28,7 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+    private BigDecimal balance;
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
 }
